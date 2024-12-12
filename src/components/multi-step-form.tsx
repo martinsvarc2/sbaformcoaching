@@ -631,17 +631,28 @@ const handleSubmit = async (e?: React.FormEvent) => {
   }, [redirectUrl])
 
 useEffect(() => {
+  // First try to get UTMs from URL
   const searchParams = new URLSearchParams(window.location.search);
   const utmParams: UTMData = {};
   
-  ['utm_source', 'utm_campaign', 'utm_medium', 'utm_content'].forEach(param => {
-    const value = searchParams.get(param);
-    if (value) {
-      utmParams[param as keyof UTMData] = value;
+  // Listen for messages from parent window
+  const handleMessage = (event: MessageEvent) => {
+    // You can add origin check if needed
+    // if (event.origin !== "https://your-framer-site.com") return;
+    
+    if (event.data.type === 'UTM_PARAMS') {
+      setUtmData(event.data.params);
     }
-  });
-  
-  setUtmData(utmParams);
+  };
+
+  window.addEventListener('message', handleMessage);
+
+  // Send ready message to parent
+  window.parent.postMessage({ type: 'FORM_READY' }, '*');
+
+  return () => {
+    window.removeEventListener('message', handleMessage);
+  };
 }, []);
 
   return (
