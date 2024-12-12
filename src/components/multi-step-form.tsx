@@ -23,6 +23,13 @@ type FormData = {
   socialHandle: string
 }
 
+type UTMData = {
+  utm_source?: string;
+  utm_campaign?: string;
+  utm_medium?: string;
+  utm_content?: string;
+}
+
 const initialFormData: FormData = {
   firstName: '',
   lastName: '',
@@ -57,6 +64,7 @@ export default function MultiStepForm() {
   const [shake, setShake] = useState(false); // Added shake state
   const [showEmailError, setShowEmailError] = useState(false); // Added email error state
   const [countdown, setCountdown] = useState<number | null>(null); // Added countdown state
+  const [utmData, setUtmData] = useState<UTMData>({});
 
   const inputRefs = useRef<(HTMLInputElement | HTMLTextAreaElement)[]>([]);
 
@@ -616,6 +624,20 @@ export default function MultiStepForm() {
       return () => clearTimeout(timer)
     }
   }, [redirectUrl])
+
+useEffect(() => {
+  const searchParams = new URLSearchParams(window.location.search);
+  const utmParams: UTMData = {};
+  
+  ['utm_source', 'utm_campaign', 'utm_medium', 'utm_content'].forEach(param => {
+    const value = searchParams.get(param);
+    if (value) {
+      utmParams[param as keyof UTMData] = value;
+    }
+  });
+  
+  setUtmData(utmParams);
+}, []);
 
   return (
   <div className="h-screen flex flex-col items-center justify-center bg-black text-[#eecc6e] font-semibold relative px-4 sm:px-6 lg:px-8">
