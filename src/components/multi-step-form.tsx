@@ -670,12 +670,12 @@ export default function MultiStepForm() {
               transition={{ delay: 0.3 }}
             >
               <Button 
-                type="button" 
-                onClick={nextStep}
-                className="bg-gradient-to-r from-yellow-400 to-yellow-200 text-black hover:from-yellow-300 hover:to-yellow-100 transition-all duration-300 font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto"
-              >
-                {step < totalSteps ? 'OK' : 'Submit'}
-              </Button>
+  type="button" 
+  onClick={nextStep}
+  className="block bg-gradient-to-r from-yellow-400 to-yellow-200 text-black hover:from-yellow-300 hover:to-yellow-100 transition-all duration-300 font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto min-w-[120px] text-center hover:bg-opacity-50"
+>
+  {step < totalSteps ? 'OK' : 'Submit'}
+</Button>
               <span className="mt-4 sm:mt-0 sm:ml-4 text-[#eecc6e] text-base sm:text-lg">Press <strong>Enter ↵</strong></span>
             </motion.div>
           </form>
