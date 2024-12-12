@@ -2,13 +2,46 @@
 
 :root {
   --font-manrope: 'Manrope', sans-serif;
+  
+  /* Add these theme variables */
+  --background: 0 0% 0%;
+  --foreground: 0 0% 98%;
+  
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 98%;
+  
+  --popover: 0 0% 0%;
+  --popover-foreground: 0 0% 98%;
+  
+  --primary: 45 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  
+  --secondary: 0 0% 9%;
+  --secondary-foreground: 0 0% 98%;
+  
+  --muted: 0 0% 9%;
+  --muted-foreground: 0 0% 63.9%;
+  
+  --accent: 0 0% 9%;
+  --accent-foreground: 0 0% 98%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 9%;
+  --input: 0 0% 9%;
+  --ring: 45 100% 50%;
+  
+  --radius: 0.5rem;
 }
 
 body {
   font-family: var(--font-manrope);
+  background-color: black;
+  color: #eecc6e;
 }
 
-/* Override autofill styles */
+/* Your existing autofill styles */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -20,21 +53,21 @@ input:-webkit-autofill:active {
   background-color: #000 !important;
 }
 
-/* Firefox specific override */
+/* Your existing Firefox specific override */
 input:autofill {
   background: #000 !important;
   background-color: #000 !important;
   color: #eecc6e !important;
 }
 
-/* Edge specific override */
+/* Your existing Edge specific override */
 input:-internal-autofill-selected {
   background: #000 !important;
   background-color: #000 !important;
   color: #eecc6e !important;
 }
 
-/* Custom scrollbar */
+/* Your existing Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -51,4 +84,3 @@ input:-internal-autofill-selected {
 ::-webkit-scrollbar-thumb:hover {
   background: #d9b85f;
 }
-
