@@ -202,7 +202,7 @@ export default function MultiStepForm() {
 
   useEffect(() => {
     const forceBlackBackground = (element: HTMLInputElement | HTMLTextAreaElement) => {
-      element.style.backgroundColor = '#000000';
+      element.style.backgroundColor = 'transparent';
       element.style.color = '#eecc6e';
     };
 
