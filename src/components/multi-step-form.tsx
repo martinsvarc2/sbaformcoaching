@@ -672,7 +672,7 @@ export default function MultiStepForm() {
               <Button 
   type="button" 
   onClick={nextStep}
-  className="block bg-gradient-to-r from-yellow-400 to-yellow-200 text-black hover:from-yellow-300 hover:to-yellow-100 transition-all duration-300 font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto min-w-[120px] text-center hover:bg-opacity-50"
+  className="block bg-gradient-to-r from-yellow-400 to-yellow-200 text-black hover:from-yellow-300 hover:to-yellow-100 transition-all duration-300 font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 sm:w-auto min-w-[100px] flex items-center justify-center"
 >
   {step < totalSteps ? 'OK' : 'Submit'}
 </Button>
