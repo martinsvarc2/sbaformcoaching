@@ -618,7 +618,7 @@ export default function MultiStepForm() {
   }, [redirectUrl])
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-[#eecc6e] font-semibold relative overflow-hidden px-4 sm:px-6 lg:px-8">
+  <div className="h-screen flex flex-col items-center justify-center bg-black text-[#eecc6e] font-semibold relative px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5"></div>
       <div className="absolute inset-0 bg-gradient-radial from-yellow-900/20 to-transparent"></div>
       <motion.div 
