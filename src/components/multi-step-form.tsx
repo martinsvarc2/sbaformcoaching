@@ -542,6 +542,8 @@ const handleSubmit = async (e?: React.FormEvent) => {
       ...utmData                    // Add this line
     };                              // Add this line
 
+    console.log("Submitting data with UTMs:", dataWithUTM);
+
     try {
       const response = await fetch('https://hook.us1.make.com/5vgg4fdi9bfygqqnyu2h11c63d8vbw6w', {
         method: 'POST',
@@ -637,16 +639,16 @@ useEffect(() => {
   
   // Listen for messages from parent window
   const handleMessage = (event: MessageEvent) => {
-    // You can add origin check if needed
-    // if (event.origin !== "https://your-framer-site.com") return;
+    console.log("Received message:", event.data); // Debug log
     
     if (event.data.type === 'UTM_PARAMS') {
+      console.log("Setting UTM params:", event.data.params); // Debug log
       setUtmData(event.data.params);
     }
   };
 
   window.addEventListener('message', handleMessage);
-
+  
   // Send ready message to parent
   window.parent.postMessage({ type: 'FORM_READY' }, '*');
 
