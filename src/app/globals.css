@@ -1,47 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
 :root {
   --font-manrope: 'Manrope', sans-serif;
-  
-  /* Add these theme variables */
-  --background: 0 0% 0%;
-  --foreground: 0 0% 98%;
-  
-  --card: 0 0% 0%;
-  --card-foreground: 0 0% 98%;
-  
-  --popover: 0 0% 0%;
-  --popover-foreground: 0 0% 98%;
-  
-  --primary: 45 100% 50%;
-  --primary-foreground: 0 0% 0%;
-  
-  --secondary: 0 0% 9%;
-  --secondary-foreground: 0 0% 98%;
-  
-  --muted: 0 0% 9%;
-  --muted-foreground: 0 0% 63.9%;
-  
-  --accent: 0 0% 9%;
-  --accent-foreground: 0 0% 98%;
-  
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-
-  --border: 0 0% 9%;
-  --input: 0 0% 9%;
-  --ring: 45 100% 50%;
-  
-  --radius: 0.5rem;
 }
-
 body {
   font-family: var(--font-manrope);
-  background-color: black;
-  color: #eecc6e;
 }
-
-/* Your existing autofill styles */
+/* Override autofill styles */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -52,35 +20,29 @@ input:-webkit-autofill:active {
   box-shadow: 0 0 0px 1000px #000 inset !important;
   background-color: #000 !important;
 }
-
-/* Your existing Firefox specific override */
+/* Firefox specific override */
 input:autofill {
   background: #000 !important;
   background-color: #000 !important;
   color: #eecc6e !important;
 }
-
-/* Your existing Edge specific override */
+/* Edge specific override */
 input:-internal-autofill-selected {
   background: #000 !important;
   background-color: #000 !important;
   color: #eecc6e !important;
 }
-
-/* Your existing Custom scrollbar */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background: #1a1a1a;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #eecc6e;
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #d9b85f;
 }
