@@ -16,20 +16,22 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 999999s ease-in-out 0s, color 999999s ease-in-out 0s;
   -webkit-text-fill-color: #eecc6e !important;
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset !important;
-  box-shadow: 0 0 0px 1000px #000 inset !important;
-  background-color: #000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  background-color: transparent !important;
 }
+
 /* Firefox specific override */
 input:autofill {
-  background: #000 !important;
-  background-color: #000 !important;
+  background: transparent !important;
+  background-color: transparent !important;
   color: #eecc6e !important;
 }
+
 /* Edge specific override */
 input:-internal-autofill-selected {
-  background: #000 !important;
-  background-color: #000 !important;
+  background: transparent !important;
+  background-color: transparent !important;
   color: #eecc6e !important;
 }
 /* Custom scrollbar */
