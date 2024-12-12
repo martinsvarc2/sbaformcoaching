@@ -537,10 +537,10 @@ const handleSubmit = async (e?: React.FormEvent) => {
     setIsSubmitting(true)
 
     const sanitizedFormData = sanitizeFormData(formData);
-    const dataWithUTM = {           
-      ...sanitizedFormData,         
-      ...utmData                    
-    };                              
+    const dataWithUTM = {           // Add this line
+      ...sanitizedFormData,         // Add this line
+      ...utmData                    // Add this line
+    };                              // Add this line
 
     console.log("Submitting data with UTMs:", dataWithUTM);
 
@@ -550,7 +550,7 @@ const handleSubmit = async (e?: React.FormEvent) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dataWithUTM),  // Changed from sanitizedFormData to dataWithUTM
+        body: JSON.stringify(dataWithUTM),  // Change this line from sanitizedFormData to dataWithUTM
       })
 
       if (!response.ok) {
@@ -635,18 +635,13 @@ const handleSubmit = async (e?: React.FormEvent) => {
 useEffect(() => {
   const searchParams = new URLSearchParams(window.location.search);
   const utmParams: UTMData = {};
-    utm_source: searchParams.get('utm_source') || undefined,
-    utm_campaign: searchParams.get('utm_campaign') || undefined,
-    utm_medium: searchParams.get('utm_medium') || undefined,
-    utm_content: searchParams.get('utm_content') || undefined
-  };
   
-   // Only set UTM data if at least one parameter exists
-  if (Object.values(utmParams).some(value => value !== undefined)) {
-    console.log('Setting UTM params from URL:', utmParams);
-    setUtmData(utmParams);
-  }
-}, []);
+  // Listen for messages from parent window
+  const handleMessage = (event: MessageEvent) => {
+    if (event.data.type === 'UTM_PARAMS') {
+      setUtmData(event.data.params);
+    }
+  };
 
   window.addEventListener('message', handleMessage);
   // Send ready message to parent
