@@ -633,22 +633,17 @@ const handleSubmit = async (e?: React.FormEvent) => {
   }, [redirectUrl])
 
 useEffect(() => {
-  // First try to get UTMs from URL
   const searchParams = new URLSearchParams(window.location.search);
   const utmParams: UTMData = {};
   
   // Listen for messages from parent window
   const handleMessage = (event: MessageEvent) => {
-    console.log("Received message:", event.data); // Debug log
-    
     if (event.data.type === 'UTM_PARAMS') {
-      console.log("Setting UTM params:", event.data.params); // Debug log
       setUtmData(event.data.params);
     }
   };
 
   window.addEventListener('message', handleMessage);
-  
   // Send ready message to parent
   window.parent.postMessage({ type: 'FORM_READY' }, '*');
 
