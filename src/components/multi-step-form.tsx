@@ -510,7 +510,7 @@ export default function MultiStepForm() {
     )
   }
 
-  const handleSubmit = async (e?: React.FormEvent) => {
+const handleSubmit = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     
     // Final validation
@@ -537,6 +537,10 @@ export default function MultiStepForm() {
     setIsSubmitting(true)
 
     const sanitizedFormData = sanitizeFormData(formData);
+    const dataWithUTM = {           // Add this line
+      ...sanitizedFormData,         // Add this line
+      ...utmData                    // Add this line
+    };                              // Add this line
 
     try {
       const response = await fetch('https://hook.us1.make.com/5vgg4fdi9bfygqqnyu2h11c63d8vbw6w', {
@@ -544,7 +548,7 @@ export default function MultiStepForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(sanitizedFormData),
+        body: JSON.stringify(dataWithUTM),  // Change this line from sanitizedFormData to dataWithUTM
       })
 
       if (!response.ok) {
@@ -582,6 +586,7 @@ export default function MultiStepForm() {
       lastName: formData.lastName,
       phone: formData.phone,
       email: formData.email,
+      ...utmData 
     };
 
     try {
