@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, KeyboardEvent, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -186,7 +186,7 @@ export default function MultiStepForm() {
   const prevStep = () => setStep(prev => Math.max(prev - 1, 1))
 
   useEffect(() => {
-    const handleGlobalKeyPress = (e: KeyboardEvent) => {
+    const handleGlobalKeyPress = (e: globalThis.KeyboardEvent) => {
       if (e.key === 'Enter' && !isSubmitting) {
         e.preventDefault();
         nextStep();
@@ -198,7 +198,7 @@ export default function MultiStepForm() {
     return () => {
       window.removeEventListener('keydown', handleGlobalKeyPress);
     };
-  }, [isSubmitting, nextStep]);
+}, [isSubmitting, nextStep]);
 
   useEffect(() => {
     const forceBlackBackground = (element: HTMLInputElement | HTMLTextAreaElement) => {
