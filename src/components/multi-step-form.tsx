@@ -231,7 +231,7 @@ export default function MultiStepForm() {
     borderLeft: 'none', 
     borderRight: 'none', 
     boxShadow: 'none',
-    backgroundColor: '#000000',
+    backgroundColor: 'transparent',
     color: '#eecc6e'
   }
 
