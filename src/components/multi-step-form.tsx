@@ -431,14 +431,14 @@ export default function MultiStepForm() {
           return (
             <div className="space-y-6 sm:space-y-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">
-                {hasEnteredName ? `${formData.firstName}, do you have at least $25,000 liquid to invest if the opportunity is right?` : "Do you have at least $25,000 liquid to invest if the opportunity is right?"}
+                {hasEnteredName ? `${formData.firstName}, are you willing to invest if the opportunity is right?` : "Are you willing to invest if the opportunity is right?"}
               </h2>
               <RadioGroup
                 onValueChange={(value) => handleRadioChange('investment', value)}
                 value={formData.investment}
                 className="space-y-4"
               >
-                {['Yes, I do', 'No, I don\'t', 'No, but I have good credit!'].map((option, index) => (
+                {['Yes', 'No'].map((option, index) => (
                   <div key={option} className="flex items-center space-x-3 py-2 px-2 hover:bg-[#eecc6e] hover:bg-opacity-10 transition-colors rounded-lg">
                     <RadioGroupItem value={option} id={`investment-${index + 1}`} className="border-[#eecc6e] text-[#eecc6e]" />
                     <Label htmlFor={`investment-${index + 1}`} className="text-[#eecc6e] text-lg sm:text-xl cursor-pointer flex-grow font-semibold">{option}</Label>
