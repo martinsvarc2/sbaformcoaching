@@ -438,7 +438,7 @@ export default function MultiStepForm() {
                 value={formData.investment}
                 className="space-y-4"
               >
-                {['Yes', 'No'].map((option, index) => (
+                {['Yes, I am', 'No, I am not'].map((option, index) => (
                   <div key={option} className="flex items-center space-x-3 py-2 px-2 hover:bg-[#eecc6e] hover:bg-opacity-10 transition-colors rounded-lg">
                     <RadioGroupItem value={option} id={`investment-${index + 1}`} className="border-[#eecc6e] text-[#eecc6e]" />
                     <Label htmlFor={`investment-${index + 1}`} className="text-[#eecc6e] text-lg sm:text-xl cursor-pointer flex-grow font-semibold">{option}</Label>
