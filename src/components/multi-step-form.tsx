@@ -355,7 +355,7 @@ export default function MultiStepForm() {
           return (
             <div className="space-y-6 sm:space-y-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">
-                {hasEnteredName ? `${formData.firstName}, Are you currently running a solar business?` : "Are you currently running a solar business?"}
+                {hasEnteredName ? `${formData.firstName}, are you currently running a solar business?` : "are you currently running a solar business?"}
               </h2>
               <Input
                 id="occupation"
@@ -363,7 +363,7 @@ export default function MultiStepForm() {
                 value={formData.occupation}
                 onChange={handleInputChange}
                 required
-                placeholder="Your Occupation"
+                placeholder="Your answer here..."
                 className={inputClassName}
                 style={inputStyle}
                 ref={el => { if (el) inputRefs.current[4] = el; }}
@@ -394,7 +394,7 @@ export default function MultiStepForm() {
           return (
             <div className="space-y-6 sm:space-y-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">
-                {hasEnteredName ? `${formData.firstName}, What brought you to coaching, and what do you hope to achieve?` : "What brought you to coaching, and what do you hope to achieve?"}
+                {hasEnteredName ? `${formData.firstName}, what brought you to coaching, and what do you hope to achieve?` : "What brought you to coaching, and what do you hope to achieve?"}
               </h2>
               <Textarea
                 id="businessReason"
