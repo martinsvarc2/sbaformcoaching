@@ -545,7 +545,7 @@ const handleSubmit = async (e?: React.FormEvent) => {
     console.log("Submitting data with UTMs:", dataWithUTM);
 
     try {
-      const response = await fetch('https://hook.us1.make.com/5vgg4fdi9bfygqqnyu2h11c63d8vbw6w', {
+      const response = await fetch('https://hook.us1.make.com/a1xzwwckjspcwmro9hjqlz173si20kme', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -592,7 +592,7 @@ const handleSubmit = async (e?: React.FormEvent) => {
     };
 
     try {
-      const response = await fetch('https://hook.us1.make.com/6miax4kfvflw5fh0u9v6nvhmakzsmifk', {
+      const response = await fetch('https://hook.us1.make.com/ivrwbl4eoqw8n4265o9tcgvpgniwfvhd', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
