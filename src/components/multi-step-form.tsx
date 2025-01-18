@@ -355,7 +355,7 @@ export default function MultiStepForm() {
           return (
             <div className="space-y-6 sm:space-y-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">
-                {hasEnteredName ? `${formData.firstName}, what's your current occupation?` : "What's your current occupation?"}
+                {hasEnteredName ? `${formData.firstName}, Are you currently running a solar business?` : "Are you currently running a solar business?"}
               </h2>
               <Input
                 id="occupation"
@@ -394,7 +394,7 @@ export default function MultiStepForm() {
           return (
             <div className="space-y-6 sm:space-y-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">
-                {hasEnteredName ? `${formData.firstName}, why do you want to have your own Renewable Energy Business?` : "Why do you want to have your own Renewable Energy Business?"}
+                {hasEnteredName ? `${formData.firstName}, What brought you to coaching, and what do you hope to achieve?` : "What brought you to coaching, and what do you hope to achieve?"}
               </h2>
               <Textarea
                 id="businessReason"
@@ -486,7 +486,7 @@ export default function MultiStepForm() {
               />
               <p className="text-[#eecc6e] font-semibold mt-8 text-lg">
                 {hasEnteredName ? `${formData.firstName}, please note: ` : ""}
-                This is NOT a coaching call. This is a call to learn about our 100% Guaranteed Done-for-You Remote Dealer System and how you can create a guaranteed passive income. This is for those ready to learn about what we offer and see if you're a great fit!
+                This is NOT a coaching call. This is for those ready to learn about what we offer and willing to invest into their growth!
               </p>
             </div>
           )
