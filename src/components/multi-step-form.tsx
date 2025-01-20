@@ -98,7 +98,7 @@ export default function MultiStepForm() {
         if (!formData.occupation) {
           toast({
             title: "Please fill out all fields",
-            description: "Occupation is required",
+            description: "This question is required",
             variant: "destructive",
           });
           return false;
@@ -355,7 +355,7 @@ export default function MultiStepForm() {
           return (
             <div className="space-y-6 sm:space-y-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">
-                {hasEnteredName ? `${formData.firstName}, are you currently running a solar business?` : "are you currently running a solar business?"}
+                {hasEnteredName ? `${formData.firstName}, why do you want to become a remote solar dealer?` : "why do you want to become a remote solar dealer?"}
               </h2>
               <Input
                 id="occupation"
